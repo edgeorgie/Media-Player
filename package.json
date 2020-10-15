@@ -1,0 +1,23 @@
+{
+  "name": "media-player",
+  "version": "1.0.0",
+  "description": "Awesome media player",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgeorgie/Media-Player.git"
+  },
+  "keywords": [
+    "Media",
+    "player",
+    "javascript"
+  ],
+  "author": "Edwin Jorge <ed.jorge1122@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edgeorgie/Media-Player/issues"
+  },
+  "homepage": "https://github.com/edgeorgie/Media-Player#readme",
+  "devDependencies": {}
+}
