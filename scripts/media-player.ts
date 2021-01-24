@@ -1,30 +1,26 @@
 class MediaPlayer {
+	media: HTMLVideoElement
+	plugins: Array<any>
+	container: HTMLElement
+
 	constructor(config) {
 		this.media = config.el
 		this.plugins = config.plugins || []
-
-		this._initPlugins()
+		this.initPlayer()
+		this.initPlugins()
 	}
 
-	_initPlugins() {
-		const player = {
-			play: () => this.play(),
-			pause: () => this.pause(),
-			media: this.media,
-			get muted() {
-				return this.media.muted
-			},
-
-			set muted(value) {
-				this.media.muted = value
-			}
-
-		}
-
-
+	private initPlugins() {
 		this.plugins.forEach(plugin => {
 			plugin.run(this)
 		});
+	}
+
+	initPlayer() {
+		this.container = document.createElement('div')
+		this.container.style.position = 'relative'
+		this.media.parentNode.insertBefore(this.container, this.media)
+		this.container.appendChild(this.media)
 	}
 
 	play() {
@@ -48,7 +44,7 @@ class MediaPlayer {
 	}
 
 	unmute() {
-		this.media.mute = false
+		this.media.muted = false
 	}
 
 	toggleMute() { 
